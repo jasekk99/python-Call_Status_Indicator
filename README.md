@@ -1,4 +1,4 @@
-# python-Call_Status_Indicator
+# python-Call_Status_Indicator ![Static Badge](https://img.shields.io/badge/version-v0.0.1-orange)
 Changes colour of a BlinkStick LED stick to match your current Microsoft Teams status
 
 ![BlinkStick Logo](https://www.blinkstick.com/images/home/logo-home.png)
