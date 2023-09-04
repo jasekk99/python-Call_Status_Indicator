@@ -6,9 +6,6 @@ substring_StatusIndicator_Added = "StatusIndicatorStateService: Added"
 separatorLeft = ": Added "
 separatorRight = " ("
 
-def execute_script(name):
-    os.system('python ' + name)
-
 def follow(thefile):
     '''generator function that yields new lines in a file
     '''
@@ -37,5 +34,5 @@ if __name__ == '__main__':
             current_status = final_stripped[0]
             print(current_status)
 
-            with open(r"main\setLEDs.py") as f:
+            with open(r"LED\setLEDs.py") as f:
                 exec(f.read())
