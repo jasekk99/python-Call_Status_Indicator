@@ -1,6 +1,6 @@
-# python-monitor_teams_status
+# python-Call_Status_Indicator
 Changes colour of a BlinkStick LED stick to match your current Microsoft Teams status
-
+![BlinkStick Logo](https://www.blinkstick.com/images/home/logo-home.png)
 
 ## Pre-requisites
 - Python 3.11 and up [Download the latest version [here](https://www.python.org/downloads/)]
