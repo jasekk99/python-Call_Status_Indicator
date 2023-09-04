@@ -7,4 +7,4 @@ bstick = blinkstick.find_first()
 
 if current_status == 'OnThePhone':
     #Use R, G and B channels to control single RGB LED
-    bstick.set_mode(red=255, green=255, blue=255)
+    bstick.set_mode(red=255, green=0, blue=0)
