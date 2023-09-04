@@ -1,1 +1,1 @@
-py -3 ./main/main.py
+py -3 ./main/monitorStatus.py

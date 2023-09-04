@@ -1,9 +1,13 @@
 import time
 import os
 
+
 substring_StatusIndicator_Added = "StatusIndicatorStateService: Added"
 separatorLeft = ": Added "
 separatorRight = " ("
+
+def execute_script(name):
+    os.system('python ' + name)
 
 def follow(thefile):
     '''generator function that yields new lines in a file
@@ -21,11 +25,17 @@ def follow(thefile):
 
         yield line
 if __name__ == '__main__':
-    logfile = open(r"C:\Users\jgreen\AppData\Roaming\Microsoft\Teams\logs.txt", "r")
+    path_to_file = os.path.expanduser('~')+r"\AppData\Roaming\Microsoft\Teams\logs.txt"
+    logfile = open(path_to_file, "r")
+    print(path_to_file)
     loglines = follow(logfile)    # iterate over the generator
+
     for line in loglines:
         if substring_StatusIndicator_Added in line:
             stripped = line.split(separatorLeft,1)
             final_stripped = stripped[1].split(separatorRight,1)
-            line = final_stripped[0]
-            print(line)
+            current_status = final_stripped[0]
+            print(current_status)
+
+            with open(r"main\setLEDs.py") as f:
+                exec(f.read())
