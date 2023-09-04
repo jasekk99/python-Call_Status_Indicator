@@ -1,5 +1,6 @@
 # python-Call_Status_Indicator
 Changes colour of a BlinkStick LED stick to match your current Microsoft Teams status
+
 ![BlinkStick Logo](https://www.blinkstick.com/images/home/logo-home.png)
 
 ## Pre-requisites
