@@ -1,1 +1,1 @@
-py -3 ./monitor/monitorStatus.py
+py -3 ./blinkstick/monitorStatus.py
