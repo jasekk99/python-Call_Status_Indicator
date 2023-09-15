@@ -28,10 +28,11 @@ If a log entry containing "StatusIndicatorStateService: Added" is found the **se
 
 ## Future features
 Features i would like to implement into the App in the near future
-### Animated transition on status change
-![](https://geps.dev/progress/0)
+
+### Animated transition on status change ![](https://geps.dev/progress/50)
+> [!NOTE]
+> Not happy with the current "Animation" i've implemented, which is only a delay in cycling through the LED index. Hopefully Blinkstick fixes the Bugs in the ´´´Pulse()´´´ function soon
 Implement some sort of non-obtrusive Animation when the Status changes
 
-### LEDs alert of incoming call
-![](https://geps.dev/progress/0)
+### LEDs alert of incoming call ![](https://geps.dev/progress/0)
 LEDs flash or pulse on incoming call
