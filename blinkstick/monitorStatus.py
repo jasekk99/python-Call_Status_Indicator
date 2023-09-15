@@ -4,8 +4,12 @@ import sys
 from blinkstick import blinkstick
 
 substring_StatusIndicator_Added = "StatusIndicatorStateService: Added"
-separatorLeft = ": Added "
-separatorRight = " ("
+separatorStatusLeft = ": Added "
+separatorStatusRight = " ("
+
+substring_reportIncomingCall = "DeviceCallControlManager Desktop: reportIncomingCall processed"
+
+current_status = 'Unknown'
 
 def follow(thefile):
     #generator function that yields new lines in a file
@@ -42,10 +46,14 @@ if __name__ == '__main__':
 
     for line in loglines:
         if substring_StatusIndicator_Added in line:
-            stripped = line.split(separatorLeft,1)
-            final_stripped = stripped[1].split(separatorRight,1)
-            current_status = final_stripped[0]
+            split_left = line.split(separatorStatusLeft,1)
+            split_endResult = split_left[1].split(separatorStatusRight,1)
+            current_status = split_endResult[0]
             print(current_status)
             with open(r"blinkstick\setLEDs.py") as f:
                 exec(f.read())
-        
+        if substring_reportIncomingCall in line:
+            current_status = 'incomingCall'
+            print("Incoming Call detected!")
+            with open(r"blinkstick\setLEDs.py") as f:
+                exec(f.read())
