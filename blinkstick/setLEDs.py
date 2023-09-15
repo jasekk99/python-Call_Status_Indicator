@@ -35,15 +35,33 @@ print('Error: '+str(error))
 
 
 
-def allLEDs(colour):
+def allLEDs(color):
     for i in range(7):
-        bstick.set_color(index=i, name=colour)
+        bstick.set_color(index=i, name=color)
+        #time.sleep(0.1)
+
+def allLEDsMorph(color):
+    for i in range(7):
+        bstick.morph(index=i, name=color)
         time.sleep(0.1)
+
+def multiColor(color1, color2):
+    for a in range(5):
+        for i in range(7):
+            bstick.set_color(index=i, name=color1)
+            time.sleep(0.05)
+        time.sleep(0.5)
+        for i in range(7):
+            bstick.set_color(index=i, name=color2)
+            time.sleep(0.05)
+        time.sleep(0.25)
 
 
 if error == False:
     #Use R, G and B channels to control single RGB LED
     match current_status:
+        case 'incomingCall':
+            multiColor('red','black')
         case 'OnThePhone': 
             allLEDs('red')
             #bstick.set_color(red=255, green=0, blue=0, name=None, hex=None)       #Set LEDs Red
@@ -51,11 +69,11 @@ if error == False:
             allLEDs('red')
             #bstick.set_color(red=255, green=0, blue=0, name=None, hex=None)
         case 'Busy':
-            allLEDs('yellow')
-            #bstick.set_color(red=255, green=255, blue=0, name=None, hex=None)    #Set LEDs Yellow
+            allLEDs('black')
+            #bstick.set_color(red=255, green=255, blue=0, name=None, hex=None)    #Turn LEDs off/No Action
         case 'Available':
             allLEDs('black')
-            #bstick.turn_off()      #Turn LEDs off
+            #bstick.turn_off()      #Turn LEDs off/No Action
         case _:
             allLEDs('black')
             #bstick.turn_off()
