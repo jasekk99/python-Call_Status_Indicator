@@ -37,3 +37,6 @@ Implement some sort of non-obtrusive Animation when the Status changes
 
 ### LEDs alert of incoming call ![](https://geps.dev/progress/90)
 LEDs flash or pulse on incoming call
+
+### Display color when workstation Locked ![](https://geps.dev/progress/70)
+Implemented, but LEDs don't turn on Smoothly.
